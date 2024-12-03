@@ -9,6 +9,7 @@ import { GalleryWidgetConfigure } from '../gallery';
 import { IntroWidgetConfigure } from '../intro';
 import { LocationWidgetConfigure } from '../location';
 import { VideoWidgetConfigure } from '../video';
+import { MessageWidgetConfigure } from '../message';
 
 interface WidgetModalProps {
   widgetItem: WidgetItem | Omit<WidgetItem, 'id'> | null;
@@ -21,6 +22,7 @@ function UnmemoizedWidgetModal({ widgetItem }: WidgetModalProps) {
   if (widgetItem.type === 'CALENDAR') return <CalendarWidgetConfigure widgetItem={widgetItem} />;
   if (widgetItem.type === 'LOCATION') return <LocationWidgetConfigure widgetItem={widgetItem} />;
   if (widgetItem.type === 'GALLERY') return <GalleryWidgetConfigure widgetItem={widgetItem} />;
+  if (widgetItem.type === 'MESSAGE') return <MessageWidgetConfigure widgetItem={widgetItem} />;
 }
 
 const WidgetModal = memo(UnmemoizedWidgetModal);
